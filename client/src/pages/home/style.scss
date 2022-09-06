@@ -1,0 +1,70 @@
+.home {
+    &__btn-adduser {
+        color: #5a71f2;
+        background-color: white;
+        border: 1px solid #5a71f2;
+        margin: 5rem 0 2rem 0;
+
+        text-align: center;
+        cursor: pointer;
+
+        padding: 10px 15px;
+        transition: all 0.5s;
+        border-radius: 2px;
+
+        display: flex;
+        align-items: center;
+        gap: 5px;
+
+        &:hover {
+            background-color: #5a71f2;
+            color: white;
+        }
+    }
+
+    &__btn-icon {
+        font-size: 1rem;
+    }
+
+    &__table {
+        width: 80%;
+        margin-inline: auto;
+        border-radius: 5px;
+
+        &-box {
+            margin-inline: auto;
+            width: 100%;
+            padding: 10px;
+            background-color: #5a71f292;
+        }
+        &-thead {
+            background-color: #5a71f2;
+        }
+
+        &-tbody {
+            background-color: #242424;
+        }
+
+        &-content {
+            padding: 10px 15px;
+        }
+
+        &-btn {
+            color: #5a71f2;
+            background-color: white;
+
+            border: none;
+            text-align: center;
+            cursor: pointer;
+
+            padding: 5px 10px;
+            transition: all 0.5s;
+            border-radius: 2px;
+
+            &:hover {
+                background-color: #5a71f2;
+                color: white;
+            }
+        }
+    }
+}

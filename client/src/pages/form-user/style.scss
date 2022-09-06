@@ -1,0 +1,65 @@
+.form {
+    width: 90%;
+    margin-inline: auto;
+    background-color: #242424;
+    border-radius: 5px;
+    border: 1px solid #5a71f2;
+
+    &__create-user {
+        color: black;
+        width: 100%;
+        margin-top: 5rem;
+    }
+
+    &__title {
+        text-align: center;
+        margin: 2rem 0;
+    }
+
+    &__box {
+        width: 90%;
+        padding: 1rem;
+        margin-bottom: 1.2rem;
+        color: white;
+
+        &-input {
+            width: 100%;
+            padding: 10px 15px;
+            margin-top: 20px;
+        }
+
+        &-label {
+            color: white;
+        }
+    }
+
+    &__box-row {
+        display: flex;
+        align-items: flex-end;
+        gap: 10px;
+
+        .form__box {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+
+            &-inputRadio {
+                margin-left: 10px;
+            }
+        }
+    }
+
+    &__btn-submit {
+        border: 1px solid #5a71f2;
+        padding: 10px 15px;
+        background-color: unset;
+        color: #242424;
+        text-align: center;
+        cursor: pointer;
+
+        display: flex;
+        width: 140px;
+        margin-inline: auto;
+        margin-top: 2rem;
+    }
+}
