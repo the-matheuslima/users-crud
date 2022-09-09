@@ -1,11 +1,13 @@
-import React, { useState } from "react";
-import '../style.scss'
-import axios from 'axios'
-import validateForm from "../../../helpers/validateForm";
-import { TbArrowsLeft } from "react-icons/tb";
-import { Link, useNavigate } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
-function CreateUser() {
+import { FormRequest } from '../../../types/form'
+
+import { TbArrowsLeft } from "react-icons/tb";
+
+import axios from 'axios'
+
+function UpdateUser() {
     const defaultForm = {
         name: '',
         email: '',
@@ -15,8 +17,17 @@ function CreateUser() {
 
     const [erros, setError] = useState(defaultForm)
     const [formFields, setformFields] = useState(defaultForm);
+
+    const { state } = useLocation();
     const navigate = useNavigate();
+
     const { email, name, gender, status } = formFields;
+
+    useEffect(() => {
+        axios.get<FormRequest>(`http://localhost:3001/users/find/${state}`)
+            .then((user) => setformFields(user.data))
+            .catch((err) => console.log(err))
+    }, [state])
 
     const formHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
         const { name, value } = event.target;
@@ -25,8 +36,8 @@ function CreateUser() {
 
     const handlerSubmitForm = (e: React.MouseEvent<HTMLInputElement>) => {
         e.preventDefault();
-        setError(defaultForm)
 
+        setError(defaultForm)
         if (!email.includes('@') || email === '') {
             return setError({
                 ...erros,
@@ -46,7 +57,7 @@ function CreateUser() {
             return setError({ ...erros, status: 'Por favor um status' });
         }
 
-        axios.post('http://localhost:3001/users/create', {
+        axios.put(`http://localhost:3001/users/update/${state}`, {
             name: name,
             email: email,
             gender: gender,
@@ -63,8 +74,7 @@ function CreateUser() {
                     <span className="form__arrow-back"><TbArrowsLeft color="black" />Voltar</span>
                 </button>
             </Link>
-
-            <h2 className="form__title">Criar novo Usúario</h2>
+            <h2 className="form__title">Atualizar Usúario</h2>
             <form className="form">
                 <div className="form__box" >
                     <label>
@@ -113,11 +123,11 @@ function CreateUser() {
 
                     </div>
                 </div>
-                {/* <input type="submit" value="" /> */}
-                <input type="submit" value='Adicionar usúario' className="form__btn-submit" onClick={(e) => handlerSubmitForm(e)} />
+                <input type="submit" value='Atualizar usúario' className="form__btn-submit" onClick={(e) => handlerSubmitForm(e)} />
+
             </form>
-        </section>
+        </section >
     );
 }
 
-export default CreateUser;
+export default UpdateUser;

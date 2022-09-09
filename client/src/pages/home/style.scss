@@ -6,24 +6,25 @@
         margin: 5rem 0 2rem 0;
 
         text-align: center;
+        font-weight: bold;
         cursor: pointer;
 
         padding: 10px 15px;
         transition: all 0.5s;
         border-radius: 2px;
 
-        display: flex;
-        align-items: center;
-        gap: 5px;
-
         &:hover {
             background-color: #5a71f2;
-            color: white;
         }
     }
 
     &__btn-icon {
         font-size: 1rem;
+        color: #242424;
+
+        display: flex;
+        align-items: center;
+        gap: 5px;
     }
 
     &__table {
