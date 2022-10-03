@@ -5,11 +5,11 @@
 <p align="center">
 <a href="#descrição">🧾 Descrição</a> • 
 <a href="#tecnologias">🚀 Tecnologias</a> • 
-<a href="#features">🔨 Features</a> •
-<a href="#settings">⚙ settings</a> •
 <a href="#license">📝 License</a> •
 <a href="#autor">Autor</a>
 </p>
+
+![Animação](https://user-images.githubusercontent.com/96140653/193639395-328cc788-92d1-4e5a-a56b-fa097d374725.gif)
 
 <h2>🧾Descrição</h2>
 
